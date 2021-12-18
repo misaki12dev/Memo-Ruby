@@ -30,7 +30,10 @@ elsif input_type == "2"
     if File.exist?("#{editFile_name}.csv")
     # p CSV.read("#{editFile_name}.csv") 
     puts "メモしたい内容を入力してください"
-    add_text = gets
+    puts "完了したら、ctrl + D をおしてください"
+    
+    add_text = $stdin.readlines
+
        file_addEdit = File.open("#{editFile_name}.csv", "a")
        file_addEdit.puts add_text
        puts "ファイルを編集しました"
