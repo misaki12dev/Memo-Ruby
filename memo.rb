@@ -14,7 +14,7 @@ if input_type == "1"
     puts "メモしたい内容を入力してください"
     puts "完了したら、ctrl + D をおしてください"
 
-    input_message = gets
+    input_message = $stdin.readlines
 
     #ファイル生成・出力
     CSV.open("#{file_name}.csv", "w") do |csv|
