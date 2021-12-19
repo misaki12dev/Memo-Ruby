@@ -14,7 +14,7 @@ if input_type == "1"
     puts "メモしたい内容を入力してください"
     puts "完了したら、ctrl + D をおしてください"
 
-    input_message = $stdin.readlines
+    input_message = $stdin.read
 
     #ファイル生成・出力
     CSV.open("#{file_name}.csv", "w") do |csv|
@@ -32,8 +32,8 @@ elsif input_type == "2"
     puts "メモしたい内容を入力してください"
     puts "完了したら、ctrl + D をおしてください"
     
-    add_text = $stdin.readlines
-
+    add_text = $stdin.read
+    
        file_addEdit = File.open("#{editFile_name}.csv", "a")
        file_addEdit.puts add_text
        puts "ファイルを編集しました"
